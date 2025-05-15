@@ -1,5 +1,7 @@
-print('^2'..GetCurrentResourceName() .. ' started')
-
+if Config.Debug then 
+    print('^2'..GetCurrentResourceName() .. ' started')
+end
+    
 local wasDriver = false
 local lastWeapon = nil
 
@@ -16,7 +18,6 @@ CreateThread(function()
             if seat == ped then
                 if not wasDriver then
                     wasDriver = true
-                    --print("Fahrer erkannt")
                 end
 
                 local currentWeapon = GetSelectedPedWeapon(ped)
@@ -24,7 +25,6 @@ CreateThread(function()
                 if not IsWeaponAllowed(currentWeapon) then
                     if currentWeapon ~= `WEAPON_UNARMED` then
                         SetCurrentPedWeapon(ped, `WEAPON_UNARMED`, true)
-                        --print("Verbotene Waffe erkannt – wechsle zu unbewaffnet")
                     end
                 end
             else
@@ -50,8 +50,10 @@ function IsWeaponAllowed(weaponHash)
     return false
 end
 
-AddEventHandler('onResourceStop', function(resourceName)
-    if resourceName == GetCurrentResourceName() then
-        print("Resource gestoppt – Waffenverhalten zurückgesetzt")
-    end
-end)
+if Config.Debug then 
+    AddEventHandler('onResourceStop', function(resourceName)
+        if resourceName == GetCurrentResourceName() then
+            print("Resource gestoppt – Waffenverhalten zurückgesetzt")
+        end
+    end)
+end
