@@ -1,6 +1,6 @@
 Config = {}
 
-Config.CheckIntervall = 2 
+Config.CheckIntervall = 2 -- Sekunden / Wie lange soll es dauern bis die Waffe erkannt wird [Desto niedriger die Zahl desto höher die Auslastung!]
 Config.WeaponList = {
     "WEAPON_PISTOL",
     "WEAPON_COMBATPISTOL",
