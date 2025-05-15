@@ -1,7 +1,7 @@
 Config = {}
 
-Config.CheckIntervall = 2 -- Sekunden / Wie lange soll es dauern bis die Waffe erkannt wird [Desto niedriger die Zahl desto höher die Auslastung!]
-Config.WeaponList = {
+Config.CheckIntervall = 2 -- Seconds / How long should it take to detect the blacklist weapons [LOW NUMBER MEANS MORE PERFORMANCE CHANGE ON OWN RISK!]
+Config.WeaponList = { -- WHITELISTET WEAPONS / Weapons that ar not in this table are blacklist weapons and you cant use them as a driver! 
     "WEAPON_PISTOL",
     "WEAPON_COMBATPISTOL",
     "WEAPON_PISTOL50",
