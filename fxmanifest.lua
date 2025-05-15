@@ -7,6 +7,6 @@ client_scripts {
 }
 
 description 'Disables the ability to drive-by on driverseat'
-version '1.1'
+version '1.3'
 
 lua53 'yes'
