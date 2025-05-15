@@ -16,7 +16,7 @@ CreateThread(function()
             if seat == ped then
                 if not wasDriver then
                     wasDriver = true
-                    print("Fahrer erkannt")
+                    --print("Fahrer erkannt")
                 end
 
                 local currentWeapon = GetSelectedPedWeapon(ped)
@@ -24,7 +24,7 @@ CreateThread(function()
                 if not IsWeaponAllowed(currentWeapon) then
                     if currentWeapon ~= `WEAPON_UNARMED` then
                         SetCurrentPedWeapon(ped, `WEAPON_UNARMED`, true)
-                        print("Verbotene Waffe erkannt – wechsle zu unbewaffnet")
+                        --print("Verbotene Waffe erkannt – wechsle zu unbewaffnet")
                     end
                 end
             else
